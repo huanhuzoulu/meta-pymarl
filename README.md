@@ -1,4 +1,3 @@
-# feature
 # [pymarl3](https://github.com/tjuHaoXiaotian/pymarl3): the source code of the ICLR-2023 paper 
 **[Boosting Multi-Agent Reinforcement Learning via Permutation Invariant and Permutation Equivariant Networks](https://openreview.net/pdf?id=OxNQXyZK-K8)**.
 

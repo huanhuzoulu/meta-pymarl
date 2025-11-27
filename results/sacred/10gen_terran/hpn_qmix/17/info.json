@@ -1,0 +1,136 @@
+{
+  "battle_won_mean": [
+    0.0
+  ],
+  "battle_won_mean_T": [
+    367
+  ],
+  "dead_allies_mean": [
+    9.75
+  ],
+  "dead_allies_mean_T": [
+    367
+  ],
+  "dead_enemies_mean": [
+    0.0
+  ],
+  "dead_enemies_mean_T": [
+    367
+  ],
+  "ep_length_mean": [
+    45.875
+  ],
+  "ep_length_mean_T": [
+    367
+  ],
+  "epsilon": [
+    1.0
+  ],
+  "epsilon_T": [
+    367
+  ],
+  "return_max": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_max_T": [
+    367
+  ],
+  "return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_mean_T": [
+    367
+  ],
+  "return_min": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_min_T": [
+    367
+  ],
+  "return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "return_std_T": [
+    367
+  ],
+  "test_battle_won_mean": [
+    0.0
+  ],
+  "test_battle_won_mean_T": [
+    367
+  ],
+  "test_dead_allies_mean": [
+    9.53125
+  ],
+  "test_dead_allies_mean_T": [
+    367
+  ],
+  "test_dead_enemies_mean": [
+    0.28125
+  ],
+  "test_dead_enemies_mean_T": [
+    367
+  ],
+  "test_ep_length_mean": [
+    54.1875
+  ],
+  "test_ep_length_mean_T": [
+    367
+  ],
+  "test_return_max": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.6666666666666666
+    }
+  ],
+  "test_return_max_T": [
+    367
+  ],
+  "test_return_mean": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.18749999999999997
+    }
+  ],
+  "test_return_mean_T": [
+    367
+  ],
+  "test_return_min": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.0
+    }
+  ],
+  "test_return_min_T": [
+    367
+  ],
+  "test_return_std": [
+    {
+      "dtype": "float64",
+      "py/object": "numpy.float64",
+      "value": 0.29973947020704494
+    }
+  ],
+  "test_return_std_T": [
+    367
+  ]
+}

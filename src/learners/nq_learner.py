@@ -61,9 +61,9 @@ class NQLearner:
         self.params = list(mac.parameters())
 
         # 添加 td_lambda 相关参数
-        self.max_td_lambda = 0.6  # 最大值
-        self.min_td_lambda = 0.1  # 最小值
-        self.td_lambda = self.max_td_lambda  # 当前值
+        # self.max_td_lambda = 0.6  # 最大值
+        # self.min_td_lambda = 0.1  # 最小值
+        # self.td_lambda = self.max_td_lambda  # 当前值
         # self.total_training_steps = getattr(args, 't_max', 10050000)  # 总训练步数
         # self.current_training_step = 0  # 当前训练步数
 
@@ -157,12 +157,12 @@ class NQLearner:
                 targets = self.pool.apply_async(
                     calculate_n_step_td_target,
                     (self.target_mixer, target_max_qvals, batch, rewards, terminated, mask, self.args.gamma,
-                     self.td_lambda, True, self.args.thread_num, False, None)  # 使用动态 td_lambda
+                     self.args.td_lambda, True, self.args.thread_num, False, None)  # 使用动态 td_lambda
                 )
             else:
                 targets = calculate_n_step_td_target(
                     self.target_mixer, target_max_qvals, batch, rewards, terminated, mask, self.args.gamma,
-                    self.td_lambda  # 使用动态 td_lambda
+                    self.args.td_lambda  # 使用动态 td_lambda
                 )
 
         # Set mixing net to training mode

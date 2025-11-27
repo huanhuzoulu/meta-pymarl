@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+            "name": "Run hpn",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main.py",
+            "python": "/home/lwq/anaconda3/envs/pymarl3/bin/python",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "args": [
+                "--config=hpn_qmix",
+                // "--config=hpn_qatten",                
+                "--env-config=sc2_v2_terran",
+                "with",
+                "obs_agent_id=True",
+                "obs_last_action=False",
+                "runner=parallel",
+                "batch_size_run=8",
+                "batch_size=128",
+                "buffer_size=5000",
+                "t_max=10050000",
+                "epsilon_anneal_time=100000",
+                "td_lambda=0.6",
+                // "mixer=qatten",
+                "mixer=qmix",                
+            ],
+            "cwd": "/home/lwq/workspace2/meta-pymarl"
+        },
+        {
+            "name": "Evaluate hpn",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main.py",
+            "python": "/home/lwq/anaconda3/envs/pymarl3/bin/python",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "args": [
+                "--config=hpn_qmix",
+                "--env-config=sc2_v2_terran",
+                "with",
+                "obs_agent_id=True",
+                "obs_last_action=False",
+                "runner=episode",
+                "batch_size_run=1",
+                "batch_size=128",
+                "buffer_size=5000",
+                "t_max=10050000",
+                "epsilon_anneal_time=100000",
+                "td_lambda=0.6",
+                "mixer=qmix",
+
+                "evaluate=True",
+                "save_replay=True",
+                "checkpoint_path=/home/lwq/workspace2/meta-pymarl/results/models/sc2_v2_10gen_terran-obs_aid=1-obs_act=0-conic_fov=0/algo=hpn_qmix-agent=hpns_rnn/env_n=8/head_n=1-mixer=qmix-hpn_hyperdim=64-acti=relu/rnn_dim=64-2bs=5000_128-tdlambda=1-epdec_0.05=100k/hpn_qmix__2025-11-24_21-11-44"
+            ],
+            "cwd": "/home/lwq/workspace2/meta-pymarl"
+        },
+    ]
+}

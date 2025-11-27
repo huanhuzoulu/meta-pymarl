@@ -998,11 +998,11 @@ class StarCraft2Env(MultiAgentEnv):
                     delta_enemy += prev_health - e_unit.health - e_unit.shield
 
         if self.reward_only_positive:
-            reward = max(delta_enemy + delta_deaths, 0)  # shield regeneration
-            # reward = max(delta_deaths, 0)  # shield regeneration            
+            # reward = max(delta_enemy + delta_deaths, 0)  # shield regeneration
+            reward = max(delta_deaths, 0)  # shield regeneration            
         else:
-            reward = delta_enemy + delta_deaths - delta_ally
-            # reward = delta_deaths
+            # reward = delta_enemy + delta_deaths - delta_ally
+            reward = delta_deaths
 
         return reward
 
@@ -2074,7 +2074,7 @@ class StarCraft2Env(MultiAgentEnv):
             for unit in self._obs.observation.raw_data.units:
                 if unit.owner == 2:
                     self.enemies[len(self.enemies)] = unit
-                    self.max_reward += unit.health_max + unit.shield_max
+                    # self.max_reward += unit.health_max + unit.shield_max
 
             if self._episode_count == 0 and not team:
                 min_unit_type = min(

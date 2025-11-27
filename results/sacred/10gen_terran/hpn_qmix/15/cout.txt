@@ -1,0 +1,444 @@
+[INFO 09:34:31] pymarl Running command 'my_main'
+[INFO 09:34:31] pymarl Started run with ID "15"
+[DEBUG 09:34:31] pymarl Starting Heartbeat
+[DEBUG 09:34:31] my_main Started
+[INFO 09:34:31] my_main Experiment Parameters:
+[INFO 09:34:31] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'hpns_rnn',
+    'agent_output_type': 'q',
+    'asn_hidden_size': 32,
+    'batch_size': 128,
+    'batch_size_run': 8,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'cpu_inference': True,
+    'critic_lr': 0.0005,
+    'double_q': True,
+    'enable_parallel_computing': False,
+    'env': 'sc2_v2',
+    'env_args': {   'capability_config': {   'n_units': 10,
+                                             'start_positions': {   'dist_type': 'surrounded_and_reflect',
+                                                                    'map_x': 32,
+                                                                    'map_y': 32,
+                                                                    'n_enemies': 10,
+                                                                    'p': 0.5},
+                                             'team_gen': {   'dist_type': 'weighted_teams',
+                                                             'exception_unit_types': [   'medivac'],
+                                                             'observe': True,
+                                                             'unit_types': [   'marine',
+                                                                               'marauder',
+                                                                               'medivac'],
+                                                             'weights': [   0.45,
+                                                                            0.45,
+                                                                            0.1]}},
+                    'change_fov_with_move': False,
+                    'conic_fov': False,
+                    'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'fully_observable': False,
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'kill_unit_step_mul': 2,
+                    'map_name': '10gen_terran',
+                    'move_amount': 2,
+                    'num_fov_actions': 12,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_own_pos': True,
+                    'obs_pathing_grid': False,
+                    'obs_starcraft': True,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 40,
+                    'reward_defeat': 0,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': False,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 0,
+                    'seed': 327974365,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8},
+    'epsilon_anneal_time': 100000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hpn_head_num': 1,
+    'hpn_hyper_activation': 'relu',
+    'hpn_hyper_dim': 64,
+    'hypernet_embed': 64,
+    'label': 'default_label',
+    'learner': 'nq_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.001,
+    'mac': 'hpn_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'hpn_qmix',
+    'obs_agent_id': True,
+    'obs_last_action': False,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'optimizer': 'adam',
+    'q_lambda': False,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 64,
+    'run': 'default',
+    'runner': 'parallel',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 327974365,
+    't_max': 10050000,
+    'target_update_interval': 200,
+    'td_lambda': 0.6,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'thread_num': 12,
+    'use_cuda': True,
+    'use_tensorboard': True}
+
+{'state_shape': 290, 'obs_shape': 162, 'n_actions': 16, 'n_agents': 10, 'n_enemies': 10, 'episode_limit': 150, 'n_normal_actions': 6, 'n_allies': 9, 'state_ally_feats_size': 7, 'state_enemy_feats_size': 6, 'obs_component': [4, (10, 8), (9, 8), 6], 'state_component': [70, 60, 160], 'map_type': 'terran_gen'}
+&&&&&&&&&&&&&&&&&&&&&& hpns_rnn 98.631K
+ &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& self.batch_device=cpu
+Mixer Size: 
+78.785K
+[INFO 09:34:32] my_main Beginning training for 10050000 timesteps
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 37417 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-_lrah3x7/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 40813 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-lwksw_sl/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 45835 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-wb7ivmun/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 32815 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-ru6fr8b_/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 34267 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-vnnin6on/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 34741 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-nqnb5ko1/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 41621 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-5_ekdcvp/
+[INFO 09:34:32] absl Launching SC2: /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64 -listen 127.0.0.1 -port 44403 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-4koj5nak/
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:32815/sc2api, attempt: 0, running: True
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:34741/sc2api, attempt: 0, running: True
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:40813/sc2api, attempt: 0, running: True
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:45835/sc2api, attempt: 0, running: True
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:37417/sc2api, attempt: 0, running: True
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:34267/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Version: B75689 (SC2.4.10)
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 34741 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-nqnb5ko1/'
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 34267 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-vnnin6on/'
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 37417 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-_lrah3x7/'
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Version: B75689 (SC2.4.10)
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 32815 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-ru6fr8b_/'
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 45835 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-wb7ivmun/'
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 40813 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-lwksw_sl/'
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:44403/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 44403 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-4koj5nak/'
+[INFO 09:34:32] absl Connecting to: ws://127.0.0.1:41621/sc2api, attempt: 0, running: True
+Version: B75689 (SC2.4.10)
+Build: Aug 12 2019 17:16:57
+Command Line: '"/home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/Versions/Base75689/SC2_x64" -listen 127.0.0.1 -port 41621 -dataDir /home/lwq/workspace2/pymarl3/../3rdparty/StarCraftII/ -tempDir /tmp/sc-5_ekdcvp/'
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Starting up...
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Fatal Error:
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Terminating...
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Startup Phase 1 complete
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+Fatal Error:
+Failed to find .build.info file at path: /home/lwq/workspace2/3rdparty/StarCraftII/.build.info
+Terminating...
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown with return code: -15
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown with return code: -15
+[INFO 09:34:33] absl Shutdown with return code: -15
+[INFO 09:34:33] absl Shutdown with return code: -15
+[INFO 09:34:33] absl Shutdown with return code: -15
+Process Process-3:
+Process Process-1:
+Process Process-6:
+Process Process-2:
+Process Process-4:
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[INFO 09:34:33] absl Shutdown gracefully.
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+[INFO 09:34:33] absl Shutdown with return code: -15
+[INFO 09:34:33] absl Shutdown gracefully.
+[INFO 09:34:33] absl Shutdown with return code: -15
+Traceback (most recent call last):
+[WARNING 09:34:33] absl SC2 isn't running, so bailing early on the websocket connection.
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+[INFO 09:34:33] absl Shutdown gracefully.
+Traceback (most recent call last):
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+[INFO 09:34:33] absl Shutdown with return code: -15
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+Process Process-8:
+Process Process-5:
+Process Process-7:
+Traceback (most recent call last):
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+Traceback (most recent call last):
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
+Traceback (most recent call last):
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lwq/workspace2/pymarl3/src/runners/parallel_runner.py", line 278, in env_worker
+    env.reset()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/wrapper.py", line 34, in reset
+    return self.env.reset(reset_config)
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 504, in reset
+    self._launch()
+  File "/home/lwq/workspace2/pymarl3/src/envs/smac_v2/official/starcraft2.py", line 419, in _launch
+    self._sc2_proc = self._run_config.start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 200, in start
+    return super(Linux, self).start(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/run_configs/platforms.py", line 83, in start
+    return sc_process.StarcraftProcess(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/sc_process.py", line 137, in __init__
+    self._controller = remote_controller.RemoteController(
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 142, in __init__
+    sock = self._connect(host, port, proc, timeout_seconds)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/stopwatch.py", line 205, in _stopwatch
+    return func(*args, **kwargs)
+  File "/home/lwq/anaconda3/envs/pymarl3/lib/python3.8/site-packages/pysc2/lib/remote_controller.py", line 176, in _connect
+    raise ConnectError("Failed to connect to the SC2 websocket. Is it up?")
+pysc2.lib.remote_controller.ConnectError: Failed to connect to the SC2 websocket. Is it up?
